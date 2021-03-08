@@ -1,5 +1,5 @@
 
-    exports.BodyParser= async (request,res)=> {
+    exports.BodyParser= async (request)=> {
          return new Promise((resolve, reject) => {
            let totalChunked = "" 
            request
@@ -12,7 +12,8 @@
              })
              .on("end", () => {
                if(totalChunked === "{'invalid': json"){
-                res.writeHead(500, { "Content-Type": "application/json" });
+                 reject()
+                // res.writeHead(500, { "Content-Type": "application/json" });
 
                }
                else{

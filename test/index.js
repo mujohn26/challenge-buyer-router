@@ -47,7 +47,7 @@ tape('should get buyers', function (t) {
     servertest(server, '/buyers/' + buyer.id, opts, function (err, res) {
       if (err) return cb(err)
       t.equal(res.statusCode, 200, 'correct statusCode')
-      t.deepEqual(res.body, buyer, 'buyer should match')
+      t.deepEqual(res.body, buyer, 'buyer  should match')
       cb()
     })
   }
