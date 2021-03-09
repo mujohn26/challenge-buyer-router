@@ -6,7 +6,7 @@ var servertest = require('dg-servertest')
 var querystring = require('querystring')
 
 var buyers = require('./buyers.json')
-var server = require('../lib/server')()
+var server = require('../lib/server')
 
 tape('should add buyers', function (t) {
   map(buyers, 1, addBuyer, function (err) {
